@@ -1,6 +1,6 @@
 # LearnSecure
 
-LearnSecure is a basic full-stack web project that demonstrates secure user registration. This project is mainly focused on form validation using a simple frontend and a Node.js backend.
+LearnSecure is a basic web project that demonstrates secure user registration. This project is mainly focused on form validation using a simple frontend and a Node.js backend.
 
 ## Tech Stack
 
