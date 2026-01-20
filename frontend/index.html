@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LearnSecure</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="landing">
+    <div class="landing-content fade-on-scroll">
+      <h1>LearnSecure</h1>
+      <p>A Cybersecurity Learning Portal</p>
+
+      <p>
+        A secure platform focused on safe account creation,
+        strong password practices, and responsible user access.
+      </p>
+
+      <p class="info-text">
+        Built with modern security principles to support privacy
+        awareness and trustworthy user onboarding.
+      </p>
+
+      <div class="actions">
+        <button onclick="showForm()">Create Account</button>
+      </div>
+    </div>
+  </header>
+
+  <section id="formSection" class="form-section hidden">
+    <div class="container">
+      <h2>Create Account</h2>
+      <p class="subtitle">Register to access the platform</p>
+
+      <form id="userForm">
+        <input type="text" id="name" placeholder="Name" />
+        <input type="email" id="email" placeholder="Email" />
+        <input type="number" id="age" placeholder="Age" />
+        <input type="text" id="phone" placeholder="Phone Number" />
+
+        <div class="password-container">
+          <input type="password" id="password" placeholder="Password" />
+          <button type="button" id="togglePassword">show</button>
+
+          <ul id="passwordChecklist" class="hidden">
+            <li id="length">At least 8 characters</li>
+            <li id="uppercase">At least one uppercase letter</li>
+            <li id="number">At least one number</li>
+          </ul>
+        </div>
+
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" />
+
+        <button type="submit" id="submitBtn">Create Account</button>
+      </form>
+
+      <p id="message"></p>
+    </div>
+
+    <div class="below-form-info">
+      <p>By creating an account, you agree to basic usage and security guidelines.</p>
+      <p>Need help? Contact support.</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
