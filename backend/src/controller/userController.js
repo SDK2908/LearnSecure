@@ -54,13 +54,7 @@ export async function createUser(req, res) {
             return res.status(400).json({ message: "Weak password" });
         }
 
-        const newUser = new user({
-            name,
-            email,
-            age,
-            phone,
-            password
-        });
+        const newUser = new user({name,email,age,phone,password});
 
         const savedUser = await newUser.save();
         res.status(201).json({ savedUser });
@@ -70,6 +64,26 @@ export async function createUser(req, res) {
         res.status(500).json({ message: "Internal server error" });
     }
 }
+export const updateUser = async (req, res) => {
+  try {
+    const { name, email, age, phone, password } = req.body;
+
+    const updatedUser = await User.findByIdAndUpdate(
+      req.params.id,
+      { name, email, age, phone, password },
+      { new: true }
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    console.error("Error updating user", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
 
 export async function deleteUser(req, res) {
     try {
